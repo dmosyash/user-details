@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import UserDetails from './components/UserDetails';
+
+/**
+ * @name App
+ * @description The main function component of the app.
+ * It contains three parts Header, Login/UserList and Footer
+ */
+  
+const App = () => {
+      const styleContainer = {
+        padding: '5% 8%',
+        backgroundColor: '#efefdf',
+        minHeight: '65vh'
+      }
+  
+  const [showUsers, setShowUsers] = useState(false);
+    
+    return (
+      <div>
+        <Header />
+        <div style={styleContainer}>
+          {showUsers ?
+            <UserDetails /> :
+            <Login goToUsers={() => setShowUsers(true)} />
+          }
+        </div>
+        <Footer />
+      </div>
+    )
 }
 
 export default App;
