@@ -1,7 +1,7 @@
 # User Details
 This is a web application for viewing all the Users and their details.
 
-[Click here to see the live App](https://movies-n-chill.netlify.com/)
+[Click here to see the live App](https://user-details.netlify.app/)
 
 This application is developed in Reactjs. No other library has been used.
 APIs are used to fetch data.
